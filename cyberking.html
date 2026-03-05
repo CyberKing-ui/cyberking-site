@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>CyberKing</title>
+
+<style>
+body{
+background:black;
+color:lime;
+font-family:monospace;
+text-align:center;
+}
+
+button{
+background:black;
+color:lime;
+border:1px solid lime;
+padding:10px;
+margin:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>CYBER KING</h1>
+<p>Welcome to my Cyber Lab</p>
+
+<button>Tools</button>
+<button>Learning</button>
+<button>Projects</button>
+
+</body>
+
+</html><canvas id="matrix"></canvas>
+
+<script>
+
+var c = document.getElementById("matrix");
+var ctx = c.getContext("2d");
+
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+var letters = "CYBERKING101010101";
+letters = letters.split("");
+
+var fontSize = 14;
+var columns = c.width/fontSize;
+
+var drops = [];
+
+for(var x = 0; x < columns; x++)
+drops[x] = 1;
+
+function draw(){
+
+ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+ctx.fillRect(0, 0, c.width, c.height);
+
+ctx.fillStyle = "#0F0";
+ctx.font = fontSize + "px monospace";
+
+for(var i = 0; i < drops.length; i++){
+
+var text = letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize > c.height && Math.random() > 0.975)
+drops[i] = 0;
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,33);
+
+</script>

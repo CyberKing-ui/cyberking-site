@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>CyberKing Login</title>
+
+<style>
+
+body{
+background:black;
+color:lime;
+font-family:monospace;
+text-align:center;
+}
+
+input{
+background:black;
+color:lime;
+border:1px solid lime;
+padding:10px;
+}
+
+button{
+background:black;
+color:lime;
+border:1px solid lime;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>CYBER LOGIN</h1>
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<br><br>
+
+<button onclick="check()">Enter</button>
+
+<script>
+
+function check(){
+
+var password = document.getElementById("pass").value;
+
+if(password == "cyberking"){
+window.location="index.html";
+}
+
+else{
+alert("Access Denied");
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
