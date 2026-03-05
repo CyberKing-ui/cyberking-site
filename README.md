@@ -50,3 +50,10 @@ color:black;
 
 </body>
 </html>
+<button onclick="enterSite()">Enter System</button>
+
+<script>
+function enterSite(){
+alert("Access Granted - Welcome CyberKing");
+}
+</script>
